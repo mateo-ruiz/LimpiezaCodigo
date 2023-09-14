@@ -1,13 +1,17 @@
-var boton = document.getElementById("btn");
-var box = document.getElementById("caja");
+const btnChangeColor = document.getElementById("btnChangeColor");
+const box = document.getElementById("box");
 
-function CambiarColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
+function changeColor() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    caja.style.backgroundColor = color;
+
+    box.style.backgroundColor = color;
+    
+    return color;
 }
 
-boton.addEventListener("click", CambiarColor);
+btnChangeColor.addEventListener("click", () => changeColor());
